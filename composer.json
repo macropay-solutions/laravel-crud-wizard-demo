@@ -24,8 +24,7 @@
     "repositories": [
         {
             "type": "git",
-            "url": "git@github.com:macropay-solutions/laravel-crud-wizard.git",
-            "reference" : "production"
+            "url": "git@github.com:macropay-solutions/laravel-crud-wizard.git"
         }
     ],
     "autoload": {
