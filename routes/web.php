@@ -45,3 +45,7 @@ Route::get('/', function () {
             JSON_PRETTY_PRINT
         ) . '</pre></body></html>';
 });
+Route::get(
+    '/login',
+    fn (): \Illuminate\Http\JsonResponse => \response()->json(['message' => 'Unauthorized'], 401)
+)->name('login');
