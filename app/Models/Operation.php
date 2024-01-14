@@ -19,6 +19,9 @@ class Operation extends BaseModel
     public const SUMMABLE_COLUMNS = [
         'value',
     ];
+    public const MIN_MAX_ABLE_ADDITIONAL_COLUMNS = [
+        'created_at',
+    ];
     protected array $ignoreUpdateFor = [
         'client_id',
         'currency',
