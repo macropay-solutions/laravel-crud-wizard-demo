@@ -8,4 +8,5 @@ See [laravel-crud-wizard](https://github.com/macropay-solutions/laravel-lumen-cr
 
 Changes required for the first resource:
 ![image](https://github.com/macropay-solutions/laravel-crud-wizard-demo/assets/153634237/56705141-2975-471e-8969-62df78067839)
+With green are the changes needed for a new resource (except ResourceController).
 
