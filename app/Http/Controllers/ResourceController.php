@@ -28,9 +28,9 @@ class ResourceController extends Controller
     public function create(Request $request): JsonResponse
     {
         try {
-            $this->validateCreateRequest($request);
+            $validated = $this->validateCreateRequest($request);
 
-            return \response()->json($this->resourceService->create($request->all())->toArray(), 201);
+            return \response()->json($this->resourceService->create($validated)->toArray(), 201);
         } catch (ValidationException | CrudValidationException $e) {
             return \response()->json(['message' => $e->getMessage(), 'errors' => $e->errors()], 400);
         } catch (\Throwable $e) {
@@ -43,10 +43,10 @@ class ResourceController extends Controller
     public function update(string $identifier, Request $request): JsonResponse
     {
         try {
-            $this->validateUpdateRequest($request);
+            $validated = $this->validateUpdateRequest($request);
 
             try {
-                return \response()->json($this->resourceService->update($identifier, $request->all())->toArray());
+                return \response()->json($this->resourceService->update($identifier, $validated)->toArray());
             } catch (ModelNotFoundException $e) {
                 if (!$this->resourceService->isUpdateOrCreateAble($request->all())) {
                     throw $e;
@@ -73,15 +73,15 @@ class ResourceController extends Controller
     /**
      * @throws \Throwable
      */
-    protected function validateCreateRequest(Request $request): void
+    protected function validateCreateRequest(Request $request): array
     {
-        \resolve(ResourceRequest::class);
+        return \resolve(ResourceRequest::class)->validated();
     }
 
     /**
      * @throws \Throwable
      */
-    protected function validateUpdateRequest(Request $request): void
+    protected function validateUpdateRequest(Request $request): array
     {
         $this->validateCreateRequest($request);
     }
