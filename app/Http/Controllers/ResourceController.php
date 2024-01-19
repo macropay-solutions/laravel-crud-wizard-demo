@@ -83,6 +83,6 @@ class ResourceController extends Controller
      */
     protected function validateUpdateRequest(Request $request): array
     {
-        $this->validateCreateRequest($request);
+        return $this->validateCreateRequest($request);
     }
 }
