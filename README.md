@@ -12,7 +12,7 @@ With green are the changes needed for a new resource (except ResourceController)
 
 If someone is interested in testing it, pls contact us https://macropay.net/contact/ for a bearer token.
 
-Here are exposed the resources with their relations: http://89.40.19.34/laravel-lumen-crud-wizard
+Here are exposed the resources with their relations: http://89.40.19.34/laravel-9/laravel-lumen-crud-wizard
 
 Test endpoint: http://89.40.19.34/laravel-9/api/{resource} or /laravel-10/
 
