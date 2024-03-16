@@ -14,15 +14,15 @@ If someone is interested in testing it, pls contact us https://macropay.net/cont
 
 Here are exposed the resources with their relations: http://89.40.19.34/laravel-lumen-crud-wizard
 
-Test endpoint: http://89.40.19.34/api/{resource}
+Test endpoint: http://89.40.19.34/laravel-9/api/{resource} or /laravel-10/
 
-ex http://89.40.19.34/api/operations?mins[]=created_at
+ex http://89.40.19.34/laravel-9/api/operations?mins[]=created_at
 
 PS. HEADER: Accept application/xls generates a binary xls file for download (with relations in different sheets).
 
 Examples:
 
-http://89.40.19.34/api/operations?mins[]=value&limit=1&relationsFilters[products][value][from]=21&doesntHaveRelations[]=products
+http://89.40.19.34/laravel-9/api/operations?mins[]=value&limit=1&relationsFilters[products][value][from]=21&doesntHaveRelations[]=products
 
 ```
 {
@@ -75,7 +75,7 @@ http://89.40.19.34/api/operations?mins[]=value&limit=1&relationsFilters[products
 }
 ```
 
-http://89.40.19.34/api/operations/1/products?aggregates[groupBys][]=id&mins[]=value
+http://89.40.19.34/laravel-9/api/operations/1/products?aggregates[groupBys][]=id&mins[]=value
 
 ```
 {
@@ -130,7 +130,7 @@ http://89.40.19.34/api/operations/1/products?aggregates[groupBys][]=id&mins[]=va
 }
 ```
 
-http://89.40.19.34/api/operations?limit=3&parent_id[o]=isNull&parent_id[v][]=1&parent_id[v][]=2&sort[0][by]=parent_id
+http://89.40.19.34/laravel-9/api/operations?limit=3&parent_id[o]=isNull&parent_id[v][]=1&parent_id[v][]=2&sort[0][by]=parent_id
 
 ```
 {
@@ -200,7 +200,7 @@ http://89.40.19.34/api/operations?limit=3&parent_id[o]=isNull&parent_id[v][]=1&p
     "total": 3748918
 }
 ```
-http://89.40.19.34/api/operations?limit=3&parent_id[o]=isNotNull
+http://89.40.19.34/laravel-9/api/operations?limit=3&parent_id[o]=isNotNull
 ```
 {
     "sums": {
